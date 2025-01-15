@@ -12,7 +12,7 @@ class RegisterView(View):
         password = data.get['password']
 
         if get_user_model().objects.filter(phone_number=phone_number).exists():
-            return JsonResponse({'eror': 'Phone number already in use.'})
+            return JsonResponse({'error': 'Phone number already in use.'})
 
 
         user = get_user_model().objects.create_user(phone_number=phone_number, password=password)
